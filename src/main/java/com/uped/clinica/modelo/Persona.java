@@ -2,18 +2,40 @@ package com.uped.clinica.modelo;
 
 // CLASE ABSTRACTA
 public abstract class Persona {
-    protected String id;
-    protected String nombre;
+    private int id;
+    private String nombre;
+    private String apellido;
+    private String telefono;
 
-    public Persona(String id, String nombre) {
+    public Persona(int id, String nombre, String apellido, String telefono) {
         this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
     }
 
-    // Método abstracto que las clases hijas deberán usar
-    public abstract void mostrarDetalles();
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getApellido() { return apellido; }
+    public void setApellido(String apellido) { this.apellido = apellido; }
+
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
+    }
+
+    // Cada subclase define su propio rol (polimorfismo)
+    public abstract String getRol();
+
+    @Override
+    public String toString() {
+        return "[" + getRol() + "] " + id + " - " + getNombreCompleto() + " (Tel: " + telefono + ")";
     }
 }
+
