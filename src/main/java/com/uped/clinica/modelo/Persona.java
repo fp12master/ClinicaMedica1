@@ -1,5 +1,6 @@
 package com.uped.clinica.modelo;
 
+// CLASE ABSTRACTA
 public abstract class Persona {
     private int id;
     private String nombre;
