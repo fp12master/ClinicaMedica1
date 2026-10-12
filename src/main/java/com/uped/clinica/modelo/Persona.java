@@ -1,7 +1,8 @@
 package com.uped.clinica.modelo;
 
 // CLASE ABSTRACTA
-public abstract class 8Persona {
+public abstract class Persona {
+
     private int id;
     private String nombre;
     private String apellido;
@@ -27,7 +28,7 @@ public abstract class 8Persona {
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
     public String getNombreCompleto() {
-        return nombre + " " + apellido;
+        return this.nombre + " " + this.apellido;
     }
 
     // Cada subclase define su propio rol (polimorfismo)
@@ -35,7 +36,6 @@ public abstract class 8Persona {
 
     @Override
     public String toString() {
-        return "[" + getRol() + "] " + id + " - " + getNombreCompleto() + " (Tel: " + telefono + ")";
+        return "[" + getRol() + "] ID: " + id + " - " + getNombreCompleto() + " (Tel: " + telefono + ")";
     }
 }
-
